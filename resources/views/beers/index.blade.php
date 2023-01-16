@@ -18,9 +18,9 @@
             <tr>
                 <td>{{ $beer->id }}</td>
                 <td>{{ $beer->name }}</td>
-                <td>$ {{ $beer->price }}</td>
+                <td>$ {{ number_format($beer->price, '2', ',', '.') }}</td>
                 <td>
-                    <a href="" class="btn btn-info"><i class="fa-solid fa-eye"></i></a>
+                    <a href="{{ route('beers.show', $beer) }}" class="btn btn-primary"><i class="fa-solid fa-eye text-white"></i></a>
                     <a href="" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
                     <a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
