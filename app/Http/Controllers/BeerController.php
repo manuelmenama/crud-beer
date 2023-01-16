@@ -64,7 +64,7 @@ class BeerController extends Controller
      */
     public function edit(Beer $beer)
     {
-        //
+        return view('beers.edit', compact('beer'));
     }
 
     /**
@@ -76,7 +76,15 @@ class BeerController extends Controller
      */
     public function update(Request $request, Beer $beer)
     {
-        //
+        $form_data = $request->all();
+        if($form_data['name'] != $beer->name){
+            $form_data['slug'] = Beer::generateSlug($form_data['name']);
+        }else{
+            $form_data['slug'] = $beer->slug;
+        }
+
+        $beer->update($form_data);
+        return redirect()->route('beers.show', $beer);
     }
 
     /**
