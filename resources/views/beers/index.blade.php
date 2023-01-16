@@ -21,8 +21,8 @@
                 <td>$ {{ number_format($beer->price, '2', ',', '.') }}</td>
                 <td>
                     <a href="{{ route('beers.show', $beer) }}" class="btn btn-primary"><i class="fa-solid fa-eye text-white"></i></a>
-                    <a href="{{route('beers.edit')}}" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                    <a href="" class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
+                    @include('partials.form-delete')
                 </td>
           </tr>
         @empty
