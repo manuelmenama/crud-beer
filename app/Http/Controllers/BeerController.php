@@ -14,7 +14,9 @@ class BeerController extends Controller
      */
     public function index()
     {
-        //
+        $beers = Beer::all();
+
+        return view('beers.index', compact('beers'));
     }
 
     /**
@@ -46,7 +48,7 @@ class BeerController extends Controller
      */
     public function show(Beer $beer)
     {
-        //
+        return view('beers.show', compact('beer'));
     }
 
     /**
