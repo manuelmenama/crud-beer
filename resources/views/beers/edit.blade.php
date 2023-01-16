@@ -2,13 +2,13 @@
 
 @section('content')
     <h2>Edit {{$beer->name}}</h2>
-    <form action="{{ route('beers.update') }}" method="POST">
+    <form action="{{ route('beers.update', $beer) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="inserire birra" name="name">
+            <input type="text" class="form-control" id="name" placeholder="inserire birra" name="name" value="">
         </div>
 
         <div class="mb-3">
