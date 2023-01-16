@@ -2,7 +2,7 @@
 
 @section('content')
 
-<a href="" class="btn btn-success">New</a>
+<a href="{{ route('beers.create')}}" class="btn btn-success">New</a>
 
 <table class="table table-striped">
     <thead>

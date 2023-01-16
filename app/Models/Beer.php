@@ -10,6 +10,8 @@ class Beer extends Model
 {
     use HasFactory;
 
+    protected $fillable =['name','slug','image','price'];
+
     public static function generateSlug($string){
         $slug = Str::slug($string, '-');
 
